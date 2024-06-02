@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <form asp-controller="Home" asp-action="ekle" method="post">
+        <label for="name">Adı Soyadı:</label><br>
+        <input type="text" id="name" name="PlayerName" required><br>
+
+        <label for="age">Yaşı:</label><br>
+        <input type="number" id="age" name="PlayerAge" required><br>
+
+        <label for="position">Posisyonu:</label><br>
+        <input type="text" id="position" name="PlayerPosition" required><br>
+
+        <label for="squad">Takımı:</label><br>
+        <input type="text" id="squad" name="PlayerSquad" required><br>
+
+        <label for="minutes">Oynadığı Süre:</label><br>
+        <input type="number" id="minutes" name="PlayerMinutesPlayed" required><br>
+
+        <label for="touches">Topa Dokunduğu Sayı:</label><br>
+        <input type="number" id="touches" name="PlayerTouches" required><br>
+
+        <label for="tackles">Yaptığı Müdahele Sayısı:</label><br>
+        <input type="number" id="tackles" name="PlayerTackles" required><br>
+
+        <input type="submit" value="Gönder">
+    </form>
+}
