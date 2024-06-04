@@ -2,5 +2,38 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model List<Player>
+  
 
+  
+<h1>Player Information</h1>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Position</th>
+            <th>Squad</th>
+            <th>Minutes Played</th>
+            <th>Touches</th>
+            <th>Tackles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@(i + 1)</td>
+                <td>@Model[i].PlayerName</td>
+                <td>@Model[i].PlayerAge</td>
+                <td>@Model[i].PlayerPosition</td>
+                <td>@Model[i].PlayerSquad</td>
+                <td>@Model[i].PlayerMinutesPlayed</td>
+                <td>@Model[i].PlayerTouches</td>
+                <td>@Model[i].PlayerTackles</td>
+            </tr>
+        }
+    </tbody>
+</table>
 

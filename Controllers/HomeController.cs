@@ -1,6 +1,7 @@
 using İleri_Veri_tabani.Data;
 using İleri_Veri_tabani.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using System.Diagnostics;
 
 namespace İleri_Veri_tabani.Controllers
@@ -16,7 +17,39 @@ namespace İleri_Veri_tabani.Controllers
 
         public IActionResult Index()
         {
-            return View();
+           
+            string connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=İleriVeriTabani;Trusted_Connection=True;";
+
+            List<Player> Players = new List<Player>();
+
+            
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT TOP(100) * FROM Players"; 
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            Player player = new Player
+                            {
+                                PlayerID = dr.GetInt32(dr.GetOrdinal("PlayerID")),
+                                PlayerName = dr.GetString(dr.GetOrdinal("PlayerName")),
+                                PlayerAge = dr.GetInt32(dr.GetOrdinal("PlayerAge")),
+                                PlayerPosition = dr.GetString(dr.GetOrdinal("PlayerPosition")),
+                                PlayerSquad = dr.GetString(dr.GetOrdinal("PlayerSquad")),
+                                PlayerMinutesPlayed = dr.GetInt32(dr.GetOrdinal("PlayerMinutesPlayed")),
+                                PlayerTouches = dr.GetFloat(dr.GetOrdinal("PlayerTouches")),
+                                PlayerTackles = dr.GetFloat(dr.GetOrdinal("PlayerTackles"))
+                            };
+                            Players.Add(player);
+                        }
+                    }
+                }
+            }
+            return View(Players);
         }
 
         public IActionResult Privacy()
