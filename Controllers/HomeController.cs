@@ -3,6 +3,9 @@ using İleri_Veri_tabani.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.Diagnostics;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using System.Diagnostics;
+
 
 namespace İleri_Veri_tabani.Controllers
 {
@@ -54,6 +57,7 @@ namespace İleri_Veri_tabani.Controllers
 
         public IActionResult Privacy()
         {
+            
             return View();
         }
 
@@ -75,6 +79,7 @@ namespace İleri_Veri_tabani.Controllers
                         
                         db.Players.Add(model);
                         db.SaveChanges();
+                      
                     }
 
                     
