@@ -29,7 +29,7 @@ namespace İleri_Veri_tabani.Controllers
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT TOP(100) * FROM Players"; 
+                string query = "SELECT * FROM Players"; 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     using (SqlDataReader dr = cmd.ExecuteReader())
