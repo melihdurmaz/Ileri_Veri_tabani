@@ -10,3 +10,7 @@ https://www.youtube.com/watch?v=G53oROaglnI
 210401091 Melih Durmaz 
 
 210401012 Muhammed Yusuf Köse 
+
+Proje Raporu ise Proje raporu.docx içindedir
+
+Python kodları ise main.py dosyası içindedir
