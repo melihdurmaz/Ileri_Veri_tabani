@@ -1,3 +1,8 @@
+VİDEO LİNKİ
+
+https://www.youtube.com/watch?v=G53oROaglnI
+
+
 ÜYELER
 
 200401020 Özgür Karli	 
